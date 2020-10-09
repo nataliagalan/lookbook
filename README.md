@@ -1,6 +1,6 @@
 
 
-#Deliverables:
+# Deliverables:
 
 - A user should be able to view all of the contacts the exist in the db
   - A contact will show the name, email, phonenumber, linkedIn info
