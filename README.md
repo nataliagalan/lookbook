@@ -22,5 +22,9 @@ Give yourself about 3 hours to complete the basic deliverables
 Setup:
 
 $ npm i
+
+
 $ npm start
+
+
 $ json-server db.json
