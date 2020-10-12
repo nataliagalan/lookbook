@@ -20,13 +20,13 @@ class FormComponent extends React.Component {
 
   handleSubmitForm = (e) => {
     e.preventDefault();
-    let newContact = {
-      name: this.state.name,
-      email: this.state.email,
-      linkedIn: this.state.linkedIn,
-      phone: this.state.phone
-    }
-    e.target.reset();
+    let newContact = this.state
+    this.setState({
+      name: '',
+      email: '',
+      linkedIn: '',
+      phone: ''
+    })
     const reqObj = {
       method: 'POST',
       headers: {
@@ -41,6 +41,7 @@ class FormComponent extends React.Component {
   }
 
  render(){
+   const { name, email, phone, linkedIn } = this.state
    return (
     <Form onSubmit={(e) => this.handleSubmitForm(e)}>
       <Form.Field>
@@ -49,6 +50,7 @@ class FormComponent extends React.Component {
           placeholder='Name' 
           name='name'
           type="text" 
+          value={name}
           onChange={this.handleChange} />
       </Form.Field>
       <Form.Field>
@@ -57,6 +59,7 @@ class FormComponent extends React.Component {
           placeholder='Email'
           name='email' 
           type="text" 
+          value={email}
           onChange={this.handleChange} />
       </Form.Field>
       <Form.Field>
@@ -65,6 +68,7 @@ class FormComponent extends React.Component {
           placeholder='LinkedIn' 
           name='linkedIn'
           type="text"
+          value={linkedIn}
           onChange={this.handleChange} />
       </Form.Field>
       <Form.Field>
@@ -73,6 +77,7 @@ class FormComponent extends React.Component {
           placeholder='Phone'
           name='phone'
           type="number"
+          value={phone}
           onChange={this.handleChange} />
       </Form.Field>
       <Button type='submit'>Add Contact</Button>
